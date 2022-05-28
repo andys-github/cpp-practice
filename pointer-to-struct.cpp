@@ -1,5 +1,5 @@
 #include <iostream>
-#include <stdlib.h>
+// #include <stdlib.h>
 
 using std::cout;
 using std::endl;
@@ -17,17 +17,19 @@ int main ()
   Rectangle *p = &r;
 
   (*p).length = 4;
-  cout << r.length << endl;
+  cout << "Length of Rectangle r: " << r.length << endl;
 
   p->length = 5;
-  cout << r.length << endl;
+  cout << "[UPDATED] Length of Rectangle r: " << r.length << endl;
 
   // Create structure in HEAP
-  Rectangle *q = (Rectangle *)malloc(sizeof(Rectangle));
+  // Rectangle *q = (Rectangle *)malloc(sizeof(Rectangle));
+  // In C++, the above can be written as:
+  Rectangle *q = new Rectangle; // No need to explicitly call malloc()
   q->length = 5;
   q->breadth = 4;
 
-  cout << sizeof(*q) << endl;
+  cout << "Size of Rectangle q created in heap: " << sizeof(*q) << endl;
 
   return 0;
 }

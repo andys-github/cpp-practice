@@ -15,9 +15,9 @@ int main()
      * And it must be initialized during declaration itself.
      ******************************************************************/
     int &r = a;
-
-    cout << r++ << endl;
-    cout << a << endl;
+    r++;
+    cout << r << endl; // 11
+    cout << a << endl; // 11
 
     return 0;
 }
